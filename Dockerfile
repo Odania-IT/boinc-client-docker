@@ -32,4 +32,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
+# Update owner
+RUN chown -R boinc:boinc /etc/boinc-client && \
+    chown -R boinc:boinc /var/lib/boinc-client
+
+USER boinc
 CMD ["start-boinc.sh"]
