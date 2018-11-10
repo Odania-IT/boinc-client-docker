@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install BOINC Client
     add-apt-repository -y ppa:costamagnagianfranco/boinc && \
     apt-get update && apt-get install -y --no-install-recommends \
-    boinc-client && \
+    boinc-client boinc-app-seti boinc-app-eah-brp && \
 # Cleaning up
     apt-get remove -y software-properties-common && \
     apt-get autoremove -y && \
