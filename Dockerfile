@@ -19,6 +19,10 @@ WORKDIR /var/lib/boinc-client
 # BOINC RPC port
 EXPOSE 31416
 
+# Create group and user with fixed id
+RUN groupadd -g 1042 -r boinc
+RUN useradd -u 1042 -g boinc -d /var/lib/boinc-client -r boinc
+
 # Install
 RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install PPA dependency
